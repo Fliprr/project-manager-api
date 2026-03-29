@@ -26,5 +26,8 @@ jobs:
       - name: Build Docker image
         run: docker build -t project-manager-api .
 
+      - name: Rodar testes
+        run: npm test
+
       - name: Sucesso
         run: echo "Build concluído com sucesso 🚀"

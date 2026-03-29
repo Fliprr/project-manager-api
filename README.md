@@ -43,6 +43,37 @@ src/
 * Prisma ORM
 * PostgreSQL
 
+## Frontend
+
+Aplicação desenvolvida em React utilizando Vite, responsável pela interface do usuário.
+
+- React
+- Vite
+- Axios
+- React Router
+
+## ☁️ Arquitetura em Nuvem
+
+O sistema segue arquitetura distribuída:
+
+Frontend (Vercel)  
+↓  
+Backend API (Node.js + Docker - Render)  
+↓  
+Banco de Dados (Supabase - PostgreSQL)
+
+### Descrição
+
+- Frontend hospedado na Vercel
+- Backend containerizado rodando no Render
+- Banco gerenciado fora do container (Supabase)
+
+### Funcionalidades
+
+- Tela de login
+- Dashboard de projetos
+- Integração com API
+
 ### Segurança
 
 * JWT (JSON Web Token)
@@ -159,14 +190,12 @@ docker run -p 3000:3000 project-manager-api
 
 ## 🔄 CI/CD
 
-O projeto utiliza GitHub Actions para:
+Pipeline executado automaticamente a cada push na branch `main`, incluindo:
 
-* Instalar dependências
-* Gerar cliente Prisma
-* Build da aplicação
-* Build da imagem Docker
-
-Pipeline executado automaticamente a cada push na branch `main`.
+- Instalação de dependências
+- Build da aplicação
+- Execução de testes automatizados
+- Validação do código
 
 ---
 
@@ -196,13 +225,16 @@ Relacionamentos:
 
 ---
 
-## 🚧 Melhorias Futuras
+## 📈 Observabilidade
 
-* Implementação de testes automatizados
-* Criação de frontend (React)
-* Logs estruturados e monitoramento
-* Deploy automatizado completo
-* Controle de permissões por perfil (admin/user)
+- Logs com Morgan
+- Tratamento de erros centralizado
+
+---
+
+## 🧪 Testes
+Testes básicos de API com Jest/Supertest
+Validação de endpoints principais
 
 ---
 
@@ -212,6 +244,12 @@ Desenvolvido por **Felipe Lima** como parte de atividade acadêmica, com foco em
 
 ---
 
+## 🌐 Deploy
+
+Frontend: [(link Vercel)](https://project-manager-api-mocha.vercel.app/)
+Backend: [(link Render)](https://project-manager-api-f1c4.onrender.com)
+API Docs: [(link Swagger)](https://project-manager-api-f1c4.onrender.com/docs)
+
 ## 📌 Conclusão
 
 Este projeto demonstra a construção de uma API moderna e escalável, integrando:
@@ -220,6 +258,7 @@ Este projeto demonstra a construção de uma API moderna e escalável, integrand
 * Banco de dados gerenciado
 * Containerização
 * Pipeline de integração contínua
+* Deploy em cloud
 
 Atendendo aos requisitos propostos com foco em qualidade, segurança e boas práticas de mercado.
 

@@ -1,0 +1,30 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositório
+        uses: actions/checkout@v3
+
+      - name: Configurar Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar Prisma generate
+        run: npx prisma generate
+
+      - name: Build Docker image
+        run: docker build -t project-manager-api .
+
+      - name: Sucesso
+        run: echo "Build concluído com sucesso 🚀"

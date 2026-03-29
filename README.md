@@ -114,7 +114,8 @@ Banco de Dados (Supabase - PostgreSQL)
 A API possui documentação interativa via Swagger:
 
 ```
-http://localhost:3000/docs
+https://project-manager-api-f1c4.onrender.com/docs
+
 ```
 
 Permite:
